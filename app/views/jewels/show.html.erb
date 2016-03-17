@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Jewel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Jewel %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @jewel.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:color) %></dt>
+      <dd><pre class="prettyprint"><%= @jewel.color %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:price) %></dt>
+      <dd><pre class="prettyprint"><%= @jewel.price %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight) %></dt>
+      <dd><pre class="prettyprint"><%= @jewel.weight %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:jewel_name) %></dt>
+      <dd><pre class="prettyprint"><%= @jewel.jewel_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:jewel_description) %></dt>
+      <dd><pre class="prettyprint"><%= @jewel.jewel_description %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Color:</strong>
-  <%= @jewel.color %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              jewels_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_jewel_path(@jewel), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              jewel_path(@jewel),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @jewel.price %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @jewel.weight %>
-</p>
-
-<p>
-  <strong>Jewel name:</strong>
-  <%= @jewel.jewel_name %>
-</p>
-
-<p>
-  <strong>Jewel description:</strong>
-  <%= @jewel.jewel_description %>
-</p>
-
-<%= link_to 'Edit', edit_jewel_path(@jewel) %> |
-<%= link_to 'Back', jewels_path %>

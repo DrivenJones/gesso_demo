@@ -1,16 +1,40 @@
-<%= simple_form_for(@jewel) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :color %>
-    <%= f.input :price %>
-    <%= f.input :weight %>
-    <%= f.input :jewel_name %>
-    <%= f.input :jewel_description %>
+<%= form_for @jewel, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :color, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :color, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :jewel_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :jewel_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :jewel_description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :jewel_description, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  jewels_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
