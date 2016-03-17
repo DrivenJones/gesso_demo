@@ -1,0 +1,16 @@
+<%= simple_form_for(@jewel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :color %>
+    <%= f.input :price %>
+    <%= f.input :weight %>
+    <%= f.input :jewel_name %>
+    <%= f.input :jewel_description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
