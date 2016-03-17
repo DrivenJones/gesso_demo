@@ -29,6 +29,7 @@ class JewelsController < ApplicationController
   # POST /jewels.json
   def create
     @jewel = Jewel.new(jewel_params)
+    @jewel.user = current_user
 
     respond_to do |format|
       if @jewel.save
