@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  color: MyString
+  price: 1.5
+  weight: 1.5
+  jewel_name: MyString
+  jewel_description: MyText
+
+two:
+  user_id: 
+  color: MyString
+  price: 1.5
+  weight: 1.5
+  jewel_name: MyString
+  jewel_description: MyText
